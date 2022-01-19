@@ -5,9 +5,11 @@ import './App.css';
 //Title.jsをインポートする
 import Title from './components/Title';
 
-class App extends Component {
-
-  // イベントハンドラー
+function App() {
+  return (
+    <div className="App">
+    {
+// イベントハンドラー
   onClickHandler = () => {
 
     // 「Hello World」のh2タグをここで取得
@@ -42,6 +44,11 @@ class App extends Component {
       </div>
     );
   }
+
+
+    }
+    </div>
+  );
 }
 
 export default App;
