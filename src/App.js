@@ -5,19 +5,43 @@ import './App.css';
 //Title.jsをインポートする
 import Title from './components/Title/Title';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+class App extends Component {
 
-      <Title title="Hello World 3.0"/>
-      </header>
-       <p className="App-intro">
+  // イベントハンドラー
+  onClickHandler = () => {
+
+    // 「Hello World」のh2タグをここで取得
+    let title = document.getElementById('versionStatement');
+
+    // 「upgrade」のpタグをここで取得
+    let upgradeButton = document.getElementById('upgradeButton');
+
+    // 取得したh２タグのテキストを変更
+    title.textContent = "Hello World 4.0";
+
+    // 取得したpタグを非表示にする。
+    upgradeButton.style.display = "none";
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+
+          // イベントハンドラーをここでpropsに渡す。
+          <Title
+            title="Hello World 3.0"
+            titleStyle={{color: 'orange'}}
+            onClick={this.onClickHandler}
+          />
+        </header>
+        <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-       </p>
-    </div>
-  );
+        </p>
+      </div>
+    );
+  }
 }
 
 export default App;

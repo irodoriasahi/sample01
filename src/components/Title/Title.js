@@ -5,11 +5,22 @@ import react from "react";
 
 //JSXやメソッドを定義する実質上の中身
 const Title = (props) => {
+
   return(
-    <div>
-      <h2>{props.title}</h2>
+    <div className="titleSection">
+
+      <h2
+        style={props.titleStyle}
+        id="versionStatement"
+      >{props.title}</h2>
+
+      <p
+        onClick={props.onClick}
+        id="upgradeButton"
+      >Upgrade</p>
+
     </div>
-  );
+  )
 }
 
 //外部のファイルがこのcomponentを利用できるようにするエクスポートの部分
